@@ -1,0 +1,140 @@
+.dashboard-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 64px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  background: rgba(12, 0, 31, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--glass-border);
+  z-index: 100;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+}
+
+.user-brief {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.user-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary-color), var(--highlight-color));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-family: var(--font-heading);
+  box-shadow: 0 0 10px rgba(157, 0, 255, 0.3);
+}
+
+.user-name {
+  color: var(--text-color);
+  font-family: var(--font-heading);
+  font-size: 1rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav-link {
+  color: var(--text-color);
+  text-decoration: none;
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--highlight-color);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.nav-link.active {
+  color: var(--highlight-color);
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 10px rgba(157, 0, 255, 0.1);
+}
+
+.sign-out-btn {
+  padding: 0.5rem 1.2rem;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(90deg, var(--primary-color), var(--highlight-color));
+  color: white;
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.sign-out-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 15px rgba(157, 0, 255, 0.2);
+}
+
+@media (max-width: 768px) {
+  .dashboard-nav {
+    padding: 0 0.5rem;
+    height: auto;
+    flex-wrap: wrap;
+  }
+
+  .nav-left {
+    order: 1;
+    flex: 0 0 auto;
+  }
+
+  .nav-links {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    padding: 0.5rem 0;
+    gap: 0;
+  }
+
+  .nav-right {
+    order: 2;
+  }
+
+  .user-name {
+    display: none;
+  }
+
+  .nav-link {
+    padding: 0.5rem;
+    font-size: 0.75rem;
+    flex: 1;
+    text-align: center;
+    border-radius: 0;
+  }
+
+  .nav-link:hover,
+  .nav-link.active {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 0;
+  }
+
+  .sign-out-btn {
+    padding: 0.4rem 1rem;
+    font-size: 0.75rem;
+  }
+}

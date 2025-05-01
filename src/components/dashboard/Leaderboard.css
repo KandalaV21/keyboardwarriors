@@ -1,0 +1,284 @@
+.leaderboard-page {
+  padding: 2rem;
+  max-width: 1000px;
+  margin: 2rem auto;
+  min-height: auto;
+  background: var(--background-dark);
+}
+
+.leaderboard-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.leaderboard-header h1 {
+  color: var(--text-color);
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  margin: 0 0 0.5rem;
+  background: linear-gradient(90deg, var(--primary-color), var(--highlight-color));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.leaderboard-header p {
+  color: var(--text-color);
+  opacity: 0.8;
+  font-family: var(--font-body);
+  font-size: 1.2rem;
+}
+
+.leaderboard-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  border-radius: 15px;
+}
+
+.leaderboard-table {
+  width: 100%;
+}
+
+.table-header {
+  display: grid;
+  grid-template-columns: 0.5fr 2fr 1fr 1fr;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  font-family: var(--font-heading);
+  color: var(--text-color);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.table-row {
+  display: grid;
+  grid-template-columns: 0.5fr 2fr 1fr 1fr;
+  padding: 1.2rem 1rem;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+  align-items: center;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.table-row:hover {
+  transform: translateX(5px);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.rank {
+  font-family: var(--font-heading);
+  font-weight: bold;
+  padding: 0.3rem 0.8rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.rank-1 {
+  background: linear-gradient(45deg, #FFD700, #FFA500);
+  color: #000;
+}
+
+.rank-2 {
+  background: linear-gradient(45deg, #C0C0C0, #A0A0A0);
+  color: #000;
+}
+
+.rank-3 {
+  background: linear-gradient(45deg, #CD7F32, #8B4513);
+  color: #fff;
+}
+
+.name-col {
+  color: var(--text-color);
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+}
+
+.score-col {
+  color: var(--highlight-color);
+  font-family: var(--font-heading);
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.accuracy-col {
+  color: var(--text-color);
+  font-family: var(--font-heading);
+  opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+  .leaderboard-page {
+    padding: 1rem;
+    max-width: 1000px;
+    margin: 1rem auto;
+  }
+
+  .leaderboard-header h1 {
+    font-size: 2rem;
+  }
+
+  .table-header, .table-row {
+    font-size: 0.8rem;
+    padding: 0.8rem 0.5rem;
+  }
+
+  .name-col {
+    font-size: 1rem;
+  }
+
+  .score-col {
+    font-size: 1.1rem;
+  }
+}
+
+/* Responsive styles for mobile */
+@media (max-width: 768px) {
+  .leaderboard-content {
+    padding: 15px;
+  }
+
+  .leaderboard-header h1 {
+    font-size: 1.8em;
+  }
+
+  .leaderboard-table {
+    font-size: 0.9em; /* Slightly smaller font on mobile */
+  }
+
+  .table-header {
+    /* Apply the same grid layout as rows */
+    grid-template-columns: 40px 1fr 55px 75px; /* Give Accuracy more space */
+    gap: 15px; /* Increased gap */
+    padding: 8px 10px;
+    align-items: center;
+    border-bottom: 1px solid var(--glass-border);
+  }
+
+  /* Style header cells specifically */
+  .table-header > div {
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+  }
+
+  /* Override alignment for specific header columns */
+  .table-header .rank-col {
+    text-align: center; /* MATCHES DATA */
+  }
+  .table-header .name-col {
+    text-align: left; /* MATCHES DATA */
+  }
+  .table-header .score-col,
+  .table-header .accuracy-col {
+    text-align: right; /* MATCHES DATA */
+  }
+
+  .table-row {
+    /* Rank | Name (flexible) | WPM | Accuracy */
+    grid-template-columns: 40px 1fr 55px 75px; /* Give Accuracy more space */
+    gap: 15px; /* Increased gap */
+    padding: 8px 10px;
+    align-items: center;
+  }
+
+  /* Ensure rank is centered/right-aligned in data rows */
+  .table-row .rank-col {
+      text-align: center; 
+  }
+
+  /* Add padding to the left of the name in data rows */
+  .table-row .name-col {
+      padding-left: 10px; /* Increased padding */
+      text-align: left; 
+  }
+
+  /* Align score/accuracy to the right in data rows */
+  .table-row .score-col,
+  .table-row .accuracy-col {
+      text-align: right;
+  }
+
+  .rank {
+    font-size: 0.9em;
+  }
+
+  .name-col {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Prevent long names breaking layout */
+  }
+
+  .score-col,
+  .accuracy-col {
+    text-align: right; /* Align scores to the right */
+  }
+}
+
+@media (max-width: 480px) {
+  .table-header {
+    /* Apply the same grid layout as rows */
+    grid-template-columns: 30px 1fr 45px 70px; /* Adjust for very small screens */
+    gap: 12px; /* Increased gap */
+    padding: 6px 8px;
+    align-items: center;
+    border-bottom: 1px solid var(--glass-border);
+  }
+
+  /* Style header cells specifically */
+  .table-header > div {
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+  }
+
+  /* Override alignment for specific header columns */
+  .table-header .rank-col {
+    text-align: center; /* MATCHES DATA */
+  }
+  .table-header .name-col {
+    text-align: left; /* MATCHES DATA */
+  }
+  .table-header .score-col,
+  .table-header .accuracy-col {
+    text-align: right; /* MATCHES DATA */
+  }
+
+  .table-row {
+    /* Rank | Name | WPM | Accuracy */
+    grid-template-columns: 30px 1fr 45px 70px; /* Adjust for very small screens */
+    padding: 6px 8px;
+    gap: 12px; /* Increased gap */
+    align-items: center;
+  }
+
+  /* Ensure rank is centered/right-aligned in data rows */
+  .table-row .rank-col {
+      text-align: center; 
+  }
+
+  /* Add padding to the left of the name in data rows */
+  .table-row .name-col {
+      padding-left: 8px; /* Increased padding (slightly less for smaller screens) */
+      text-align: left;
+  }
+
+  /* Align score/accuracy to the right in data rows */
+  .table-row .score-col,
+  .table-row .accuracy-col {
+      text-align: right;
+  }
+
+  .leaderboard-table {
+    font-size: 0.85em; 
+  }
+}

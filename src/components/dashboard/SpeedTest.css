@@ -1,0 +1,40 @@
+.speed-test-page {
+  padding: 1.5rem;
+  padding-top: 84px;
+  height: 100vh;
+  background: var(--background-dark);
+  box-sizing: border-box;
+}
+
+.speed-test-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.speed-test-header h1 {
+  color: var(--text-color);
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  margin: 0 0 0.5rem;
+  background: linear-gradient(90deg, var(--primary-color), var(--highlight-color));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.speed-test-header p {
+  color: var(--text-color);
+  opacity: 0.8;
+  font-family: var(--font-body);
+}
+
+@media (max-width: 768px) {
+  .speed-test-page {
+    padding: 1rem;
+    padding-top: 74px;
+  }
+
+  .speed-test-header h1 {
+    font-size: 1.5rem;
+  }
+}
